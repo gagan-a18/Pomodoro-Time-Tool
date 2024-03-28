@@ -10,5 +10,28 @@ export default {
     extend: {},
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [
+    nextui({
+      themes: {
+        red: {
+          colors: {
+            background: "#ba4949",
+            foreground: "#FFFFFF",
+          },
+        },
+        blue: {
+          colors: {
+            background: "#191970",
+            foreground: "#FFFFFF",
+          },
+        },
+        green: {
+          colors: {
+            background: "#097969",
+            foreground: "#FFFFFF",
+          },
+        },
+      },
+    }),
+  ],
 };
