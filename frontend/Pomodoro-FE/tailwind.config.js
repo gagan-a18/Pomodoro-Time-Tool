@@ -21,13 +21,13 @@ export default {
         },
         blue: {
           colors: {
-            background: "#191970",
+            background: "#004d80",
             foreground: "#FFFFFF",
           },
         },
         green: {
           colors: {
-            background: "#097969",
+            background: "#206020",
             foreground: "#FFFFFF",
           },
         },
