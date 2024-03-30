@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import { useAppSelector } from "../../../redux-toolkit/hooks";
 import Timer from "./Timer";
+import ProgressCard from "../ProgressCard/ProgressCard";
 
 const Time_Object = (value: number) => {
     const time_object = new Date();
@@ -8,7 +10,10 @@ const Time_Object = (value: number) => {
 }
 
 
+
 const TimeCard = () => {
+
+    const category = useAppSelector(state => state.category.name);
 
     const pomodoro_value = useAppSelector(state => state.timeValue.PomodoroNumber);
     const short_break_value = useAppSelector(state => state.timeValue.ShortBreakNumber);
@@ -20,15 +25,24 @@ const TimeCard = () => {
 
     return (
         <>
-            <div className="w-3/12">
-                <Timer expiryTimestamp={POMO_TIME} time_value={pomodoro_value} />
-            </div>
-            <div className="w-3/12">
-                <Timer expiryTimestamp={SB_TIME} time_value={short_break_value} />
-            </div>
-            <div className="w-3/12">
-                <Timer expiryTimestamp={LB_TIME} time_value={long_break_value} />
-            </div>
+            <motion.div initial={{ y: -100 }} animate={{ y: 0 }} transition={{ delay: 1.5 }} className={`w-3/12 ${category === "Pomodoro" ? "shadow-2xl shadow-black py-2 rounded-3xl ml-1 bg-white/20" : "opacity-10"}`}>
+                <div className="mt-2 relative top-1">
+                    <ProgressCard time_value={pomodoro_value} value_category="Pomodoro" />
+                </div>
+                <Timer expiryTimestamp={POMO_TIME} time_value={pomodoro_value} value_category="Pomodoro" />
+            </motion.div>
+            <motion.div initial={{ y: -100 }} animate={{ y: 0 }} transition={{ delay: 1.6 }} className={`w-3/12 ${category === "Short Break" ? "shadow-2xl shadow-black py-2 rounded-3xl ml-1 bg-white/20" : "opacity-10"}`}>
+                <div className="mt-2 relative top-1">
+                    <ProgressCard time_value={short_break_value} value_category="Short Break" />
+                </div>
+                <Timer expiryTimestamp={SB_TIME} time_value={short_break_value} value_category="Short Break" />
+            </motion.div>
+            <motion.div initial={{ y: -100 }} animate={{ y: 0 }} transition={{ delay: 1.7 }} className={`w-3/12 ${category === "Long Break" ? "shadow-2xl shadow-black py-2 rounded-3xl ml-1 bg-white/20" : "opacity-10"}`}>
+                <div className="mt-2 relative top-1">
+                    <ProgressCard time_value={long_break_value} value_category="Long Break" />
+                </div>
+                <Timer expiryTimestamp={LB_TIME} time_value={long_break_value} value_category="Long Break" />
+            </motion.div>
         </>
     )
 }

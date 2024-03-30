@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit"
 
 
 const initialState = {
-    PomodoroNumber: 15,
-    ShortBreakNumber: 5,
-    LongBreakNumber: 10,
+    PomodoroNumber: 1500,
+    ShortBreakNumber: 300,
+    LongBreakNumber: 900,
 }
 
 export const timeSlice = createSlice({
