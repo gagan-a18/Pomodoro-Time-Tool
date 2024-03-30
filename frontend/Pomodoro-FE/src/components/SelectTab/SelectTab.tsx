@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../redux-toolkit/hooks";
 import { changeState } from "../../redux-toolkit/Features/category";
 import { motion } from "framer-motion";
 import buttons_desc from "./buttonsDesc";
-import ProgressCard from "../TimerContainer/ProgressCard";
+import ProgressCard from "../TimerContainer/ProgressCard/ProgressCard";
 
 
 
