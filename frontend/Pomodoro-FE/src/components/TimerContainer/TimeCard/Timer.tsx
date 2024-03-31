@@ -68,11 +68,11 @@ const Timer = ({ expiryTimestamp, time_value, value_category }: TimerProps) => {
     }, [minutes, seconds]);
     return (
         <div className='text-center'>
-            <div className="2xl:text-[90px] xl:text-[70px] lg:text-[60px] text-[40px]">
+            <div className="2xl:text-[90px] xl:text-[70px] lg:text-[60px] text-[30px]">
                 <span>{minutes}</span>:{`${seconds <= 9 && seconds != 0 ? 0 : ""}`}<span>{seconds}</span>{`${seconds === 0 ? 0 : ""}`}
             </div>
-            <div className='flex flex-row justify-around'>
-                <Button disabled={category != value_category} className='disabled:cursor-not-allowed shadow-3xl lg:text-xl text-sm bg-white text-black rounded-full lg:px-4 px-1 lg:py-1 md:min-w-20 min-w-0' onClick={() => { handleStateChange(`${control ? "Start" : "Pause"}`) }}>{control ? "Start" : "Pause"}</Button>
+            <div className='sm:w-full w-6/12 sm:mx-0 mx-auto flex sm:flex-row flex-col sm:justify-around'>
+                <Button disabled={category != value_category} className='sm:mb-0 mb-2 disabled:cursor-not-allowed shadow-3xl lg:text-xl text-sm bg-white text-black rounded-full lg:px-4 px-1 lg:py-1 md:min-w-20 min-w-0' onClick={() => { handleStateChange(`${control ? "Start" : "Pause"}`) }}>{control ? "Start" : "Pause"}</Button>
                 <Button disabled={category != value_category} className='disabled:cursor-not-allowed shadow-3xl lg:text-xl text-sm bg-white text-black rounded-full lg:px-4 px-1 lg:py-1 md:min-w-20 min-w-0' onClick={() => { handleReset("Reset") }}>Reset</Button>
             </div>
             <div className='mt-1'>

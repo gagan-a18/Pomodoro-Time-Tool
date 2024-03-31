@@ -25,7 +25,7 @@ function App() {
           POMODORO COUNT : {pomo_value}
         </motion.div>
         <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.1 }} >
-          <Button onClick={() => { Cookies.remove("POMO_VALUE"); window.location.reload() }} className={"shadow-2xl shadow-black flex w-fit mx-auto mt-10 bg-white/20 rounded-full p-3 text-sm"}>Clear Pomodoro COUNT</Button>
+          <Button onClick={() => { Cookies.remove("POMO_VALUE"); window.location.reload() }} className={"shadow-2xl shadow-black flex w-fit mx-auto mt-5 bg-white/20 rounded-full p-3 text-sm"}>Clear Pomodoro COUNT</Button>
         </motion.div>
       </main>
 
