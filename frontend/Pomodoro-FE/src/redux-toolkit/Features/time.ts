@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit"
+import Cookies from "js-cookie";
 
 
 const initialState = {
-    PomodoroNumber: 1500,
-    ShortBreakNumber: 300,
-    LongBreakNumber: 900,
+    PomodoroNumber: Number(Cookies.get("POMO_NUMBER")) || 1500,
+    ShortBreakNumber: Number(Cookies.get("SB_NUMBER")) || 300,
+    LongBreakNumber: Number(Cookies.get("LB_NUMBER")) || 900,
 }
 
 export const timeSlice = createSlice({

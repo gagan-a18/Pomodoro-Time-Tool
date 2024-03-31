@@ -24,7 +24,7 @@ const ProgressCard = ({ time_value, value_category }: ProgressProps) => {
 
     return (
         <>
-            {category === value_category && <Progress className="w-10/12 mx-auto" aria-label="Loader" size="sm" value={(value * increment)} />}
+            {category === value_category && <Progress className="w-full mx-auto" aria-label="Loader" size="sm" value={(value * increment)} />}
         </>
     )
 }

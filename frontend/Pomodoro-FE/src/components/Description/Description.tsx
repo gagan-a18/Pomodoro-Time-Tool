@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import messages from "./messages";
 
+//THIS COMPONENT DISPLAYS INSTRUCTIONS.
+
 const Description = () => {
     return (
         <>
